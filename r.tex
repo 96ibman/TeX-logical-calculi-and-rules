@@ -1,0 +1,31 @@
+\section{Resolution}
+
+\noindent
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\mathcal{R}_0]
+        {A \lor B}
+        {P^T \lor A \qquad \qquad P^F \lor B}
+    \]
+\end{minipage}
+
+% First Order Resolution
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{R}_1]
+            {(\sigma(C)) \lor (\sigma(D))}
+            {A^T \lor C \quad B^F \lor D \quad \sigma = mgu(A,B)}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{R}_1]
+            {(\sigma(A)) \lor (\sigma(C))}
+            {A^{\alpha} \lor B^{\beta} \lor C \quad \sigma = mgu(A,B)}
+        \]
+    \end{minipage}
+\end{multicols}

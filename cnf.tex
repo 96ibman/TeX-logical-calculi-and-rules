@@ -1,0 +1,121 @@
+\section{CNF}
+
+% Disjunction Rules
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\lor^T]
+            {C \lor A^T \lor B^T}
+            {C \lor (A \lor B)^T}
+        \]
+    \end{minipage}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\lor^F]
+            {(C \lor A^F) \land (C \lor B^F)}
+            {C \lor (A \lor B)^F}
+        \]
+    \end{minipage}
+\end{multicols}
+
+% Negation Rules
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\neg^T]
+            {C \lor A^F}
+            {C \lor \neg A^T}
+        \]
+    \end{minipage}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\neg^F]
+            {C \lor A^T}
+            {C \lor \neg A^F}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\noindent
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\forall^T]
+        {([Z/X](A))^T \lor C}
+        {(\forall X.A)^T \lor C \quad Z \notin (free(A) \cup free(C))}
+    \]
+\end{minipage}
+
+\noindent
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\forall^F]
+        {([f(X_1,\cdots,X_k)/X](A))^F \lor C}
+        {(\forall X.A)^F \lor C \quad free(\forall X.A) = \{X_1,\cdots,X_k\} \quad
+        f \in \sum_{k}^{sk} new}
+    \]
+\end{minipage}
+
+\subsection{Derived Rules}
+
+% Implication Rules
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\Rightarrow^T]
+            {C \lor A^F \lor B^T}
+            {C \lor (A \Rightarrow B)^T}
+        \]
+    \end{minipage}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\Rightarrow^F]
+            {(C \lor A^T) \land (C \lor B^F)}
+            {C \lor (A \Rightarrow B)^F}
+        \]
+    \end{minipage}
+\end{multicols}
+
+% Conjunction Rules
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\land^T]
+            {(C \lor A^T) \land (C \lor B^T)}
+            {C \lor (A \land B)^T}
+        \]
+    \end{minipage}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\land^F]
+            {C \lor A^F \lor B^F}
+            {C \lor (A \land B)^F}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\noindent
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\exists^T]
+        {([f(X_1,\cdots,X_k)/X](A))^T \lor C}
+        {(\exists X.A)^T \lor C \quad free(\forall X.A) = \{X_1,\cdots,X_k\} \quad
+        f \in \sum_{k}^{sk} new}        
+    \]
+\end{minipage}
+
+\noindent
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\exists^F]
+        {([Z/X](A))^F \lor C}
+        {(\exists X.A)^F \lor C \quad Z \notin (free(A) \cup free(C))}        
+    \]
+\end{minipage}

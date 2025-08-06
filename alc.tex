@@ -1,0 +1,53 @@
+\section{Tableau Calculus for $\mathcal{ALC}$ ($\mathcal{T}_{\mathcal{ALC}}$)}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{T}_{\sqcap}]
+            {x:\varphi \quad x:\psi}
+            {x:\varphi \sqcap \psi}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{T}_{\sqcup}]
+            {x:\varphi \mid x:\psi}
+            {x:\varphi \sqcup \psi}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\vspace{0.3cm}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{T}_{\forall}]
+            {y:\varphi}
+            {x:\forall R. \varphi \quad x R y}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{T}_{\exists}]
+            {x R y \quad y:\varphi}
+            {x:\exists R. \varphi}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\vspace{0.3cm}
+
+\begin{minipage}{\linewidth}
+    \[
+        \infer[\mathcal{T}_{\bot}]
+        {\bot}
+        {x:\varphi \quad x:\overline{\varphi}}
+    \]
+\end{minipage}

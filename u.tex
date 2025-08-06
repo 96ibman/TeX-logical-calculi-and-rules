@@ -1,0 +1,42 @@
+\section{Unification}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{U}_{dec}]
+            {\epsilon \land A^1 =^? B^1 \land \cdots \land A^n =^? B^n}
+            {\epsilon \land f(A^1,\cdots,A^n) =^? f(B^1,\cdots,B^n)}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace{0.1cm}
+        \[
+            \infer[\mathcal{U}_{triv}]
+            {\epsilon}
+            {\epsilon \land A =^? A}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{U}_{elim}]
+            {[A/X](\epsilon \land X =^? A)}
+            {\epsilon \land X =^? A \quad X \notin free(A) \quad X \in free(\epsilon)}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\mathcal{U} \bot]
+            {\bot}
+            {\epsilon \land f(X^1,\cdots,X^n) =^? g(Y^1,\cdots,Y^n)}
+        \]
+    \end{minipage}
+\end{multicols}

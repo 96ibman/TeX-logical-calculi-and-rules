@@ -1,0 +1,195 @@
+\section{Natural Deduction}
+
+\begin{multicols}{3}
+    % conj. intro
+    \noindent
+    \begin{minipage}{\linewidth}   
+        $$
+            \infer[\land I]{A \land B}{A & B}
+        $$
+    \end{minipage}
+
+    % conj. elimL
+    \noindent
+    \begin{minipage}{\linewidth}   
+        $$
+            \infer[\land E_l]{A}{A \land B}
+        $$
+    \end{minipage}
+
+    % conj. elimR
+    \noindent
+    \begin{minipage}{\linewidth}   
+        $$
+            \infer[\land E_r]{B}{A \land B}
+        $$
+    \end{minipage}
+\end{multicols}
+
+\begin{multicols}{2}
+    % impl. intro
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\Rightarrow I^1]{A \Rightarrow B}{\infer*{B}{[A]^1}}
+        $$
+    \end{minipage}
+
+    % impl. elim.
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace*{1cm}
+        $$
+            \infer[\Rightarrow E]{B}{A \Rightarrow B \quad A}
+        $$
+    \end{minipage}
+\end{multicols}
+
+\noindent
+\begin{minipage}{\linewidth}
+    % TND
+    $$
+        \infer[\mathcal{TND}]{A \lor \neg A}{\quad}
+    $$
+\end{minipage}
+
+% For All
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\forall I^*]{\forall X. A}{A}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\forall E]{[B/X](A)}{\forall X.A}
+        \]
+    \end{minipage}
+\end{multicols}
+
+* means that A does not depend on any hypothesis in which X is free
+
+% There Exist
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace*{0.9cm}
+        \[
+            \infer[\exists I]{\exists X.A}{[B/X](A)}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\exists E^1]{C}{
+                \exists X.A \quad
+                \infer*{C}{[[c/X](A)]^1} \quad
+                c \in \sum_{0}^{sk} new \qquad
+            } 
+        \]
+    \end{minipage}
+\end{multicols}
+
+% Equality
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace{0.3cm}
+        \[
+            \infer[=I]{A=A}{}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[=E]{[B/p]C}{A=B \qquad C[A]_p}
+        \]
+    \end{minipage}
+\end{multicols}
+
+% Equivalence
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace{0.3cm}
+        \[
+            \infer[\Leftrightarrow I]{A \Leftrightarrow A}{}
+        \]
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \[
+            \infer[\Leftrightarrow E]{[B/p]C}{A \Leftrightarrow B \qquad C[A]_p}
+        \]
+    \end{minipage}
+\end{multicols}
+
+\subsection{Derived Rules}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\lor I_l]{A \lor B}{A}
+        $$
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\lor I_r]{A \lor B}{B}
+        $$
+    \end{minipage}
+\end{multicols}
+
+\noindent
+\begin{minipage}{\linewidth}
+    $$
+        \infer[\lor E^1]{C}{
+            A \lor B \quad
+            \infer*{C}{[A]^1} \quad
+            \infer*{C}{[B]^1}
+        }
+    $$
+\end{minipage}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\neg I^1]{\neg A}{
+                \infer*{C}{[A]^1} \quad \infer*{\neg C}{[A]^1}
+            }
+        $$
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        \vspace*{1cm}
+        $$
+            \infer[\neg E]{A}{\neg \neg A}
+        $$
+    \end{minipage}
+\end{multicols}
+
+\begin{multicols}{2}
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\bot I]{\bot}{\neg A \quad A}
+        $$
+    \end{minipage}
+
+    \noindent
+    \begin{minipage}{\linewidth}
+        $$
+            \infer[\bot E]{A}{\bot}
+        $$
+    \end{minipage}
+\end{multicols}

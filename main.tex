@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage[]{mdframed}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Ibrahim M. A. Nasser}
+\fancyfoot[CO,RE]{ibrahim.nasser@fau.de}
+
+
+\include{nd}   % Natural Deduction
+\include{t}    % Tableau
+\include{cnf}  % CNF
+
+\input{r}      % Resolution
+\input{u}      % Unification
+\input{alc}    % ALC Tableau
+\end{document}
